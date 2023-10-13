@@ -1,309 +1,1572 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VD6DCH3PQG"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VD6DCH3PQG"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-VD6DCH3PQG');
+      gtag("config", "G-VD6DCH3PQG");
     </script>
-
 
     <title>Compteur</title>
 
-    <meta charset="UTF-8">
-    <meta name="description" content="
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="
 
-        Le compteur de Raph le bg" >
+        Le compteur de Raph le bg"
+    />
 
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="yes" name="mobile-web-app-capable">
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="#141516" name="theme-color">
-    <meta content="#141516" name="msapplication-TileColor">
-    <meta content="#141516" name="apple-mobile-web-app-status-bar-style">
-    <meta content="Compteur" name="apple-mobile-web-app-title">
-    <meta name="keywords" content="Counter app, tally counter app">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="yes" name="mobile-web-app-capable" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="#141516" name="theme-color" />
+    <meta content="#141516" name="msapplication-TileColor" />
+    <meta content="#141516" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="Compteur" name="apple-mobile-web-app-title" />
+    <meta name="keywords" content="Counter app, tally counter app" />
 
-    <link href="https://simplecounter.app/manifest.json" rel="manifest">
-    <link href="https://simplecounter.app/icon-152x152.png" rel="apple-touch-icon">
-    <link href="https://simplecounter.app/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="https://simplecounter.app/manifest.json" rel="manifest" />
+    <link
+      href="https://simplecounter.app/icon-152x152.png"
+      rel="apple-touch-icon"
+    />
+    <link
+      href="https://simplecounter.app/favicon.ico"
+      rel="icon"
+      type="image/x-icon"
+    />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-          media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      media="print"
+      onload="this.onload=null;this.removeAttribute('media');"
+    />
     <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      />
     </noscript>
 
-    <meta property="og:title" content="Compteur">
-    <meta property="og:site_name" content="Compteur">
-    <meta property="og:url" content="compteurderaph.com">
-    <meta property="og:description" content="Le compteur de Raph le bg">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="compteurderaph.com/simple-counter-app.jpg">
+    <meta property="og:title" content="Compteur" />
+    <meta property="og:site_name" content="Compteur" />
+    <meta property="og:url" content="compteurderaph.com" />
+    <meta property="og:description" content="Le compteur de Raph le bg" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="compteurderaph.com/simple-counter-app.jpg"
+    />
 
     <script type="application/ld+json">
-        {
-            "@context" : "http://schema.org",
-            "@type" : "SoftwareApplication",
-            "name" : "Le compteur de Raph",
-            "image" : "https://compteurderaph.com/simple-counter-app.jpg",
-            "author" : {
-                "@type" : "Person",
-                "name" : "Raphaël Deschênes"
-            },
-            "downloadUrl" : "https://compteurderaph.com"
-        }
+      {
+        "@context": "http://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Le compteur de Raph",
+        "image": "https://compteurderaph.com/simple-counter-app.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Raphaël Deschênes"
+        },
+        "downloadUrl": "https://compteurderaph.com"
+      }
     </script>
 
     <style>
-        *{font-family:Inter,sans-serif;line-height:1.5;touch-action:manipulation}body{margin:0;text-align:center;transition:background-color .3s,color .3s}body.user-is-tabbing button:focus{outline:2px solid #7aacfe!important;outline:5px auto -webkit-focus-ring-color!important}button{background:0}button,input{cursor:pointer;border:0}button:focus{border:none;outline:0}h1,h2,h3,p{max-width:420px;margin-left:auto;margin-right:auto}.cover{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;min-height:100vh;position:absolute;top:0;transition:opacity .3s}.inactive{display:none}.visually-hidden{position:absolute!important;top:-9999px!important;left:-9999px!important;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}.intro h1{background:linear-gradient(90deg,rgba(255,255,255,0) 0,#fff 33.33%,#fff 66.66%,rgba(255,255,255,0) 100%);background-clip:text;text-fill-color:transparent;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-repeat:no-repeat;background-size:300% auto;background-position:200% 0;animation:swipe 5s ease-in-out}@media only screen and (min-width:700px){.intro h1{font-size:2.5em}}@media only screen and (min-width:1000px){.intro h1{font-size:3em}}.intro h2{font-size:1.125em;font-weight:400;animation:introfade 3s ease-in-out 1.5s;opacity:0;width:84%}@media only screen and (min-width:800px){.intro h2{font-size:1.5em}}#info h2{font-size:1em;width:84%;font-weight:400}@keyframes swipe{0%{background-position:200% 0}35%{background-position:50% 0}65%{background-position:50% 0}100%{background-position:-200%}}@keyframes fade{0%{opacity:0}100%{opacity:1}}@keyframes fadedown{0%{opacity:0;transform:translateY(-10px)}100%{opacity:1;transform:translateY(0)}}@keyframes flash{0%{opacity:0}40%{opacity:1}60%{opacity:1}100%{opacity:0}}@keyframes introfade{0%{opacity:0;transform:translateY(-7px)}25%{opacity:1;transform:translateY(0)}75%{opacity:1}100%{opacity:0}}.count-layout{width:80%;margin:0 auto;border:1px solid rgba(255,255,255,.03)}@media only screen and (max-height:500px){.count-layout{width:40%}}@media only screen and (min-width:600px) and (min-height:600px){.count-layout{font-size:130%}}@media only screen and (min-width:800px) and (min-height:600px){.count-layout{font-size:150%}}@media only screen and (min-width:1050px) and (min-height:600px){.count-layout{font-size:200%}}#count-container{line-height:1;font-size:16em;text-align:center;opacity:0;animation:fadedown 1s ease-out 4s forwards}#count-container.two-digits{line-height:1;font-size:11em;text-align:center}#count-container.three-digits{line-height:1;font-size:7.5em;text-align:center}#count-container.four-digits{line-height:1;font-size:6.25em;text-align:center}@media only screen and (min-width:1000px) and (min-height:600px),(min-height:1000px) and (min-width:600px){#count-container,#count-container.four-digits,#count-container.three-digits,#count-container.two-digits{font-size:15em}}@media only screen and (min-width:1300px) and (min-height:600px),(min-height:1300px) and (min-width:600px){#count-container,#count-container.four-digits,#count-container.three-digits,#count-container.two-digits{font-size:18em}}@media only screen and (min-width:2000px) and (min-height:1000px){#count-container,#count-container.four-digits,#count-container.three-digits,#count-container.two-digits{font-size:24em}}#spaces-container{position:absolute;bottom:11em;left:calc(50% - 60px);width:120px;font-size:.75em;transition:opacity .3s;opacity:0}@media only screen and (orientation:landscape){#spaces-container{bottom:3em}}@media only screen and (max-height:580px){#spaces-container{bottom:3em}}@media only screen and (orientation:landscape) and (min-height:400px){#spaces-container{bottom:4em}}@media only screen and (orientation:landscape) and (min-height:600px){#spaces-container{font-size:1em;left:calc(50% - 100px);width:200px}}@media only screen and (orientation:landscape) and (min-height:800px){#spaces-container{font-size:1.3em;left:calc(50% - 100px);width:200px}}body[limit-warning=on] #spaces-container[loading=true]{animation:fadedown 1s ease-out 4.5s forwards}body[limit-warning=on] #spaces-container[loading=done]{opacity:1}#spaces-available{font-size:2.125em}#spaces-notice{text-transform:uppercase;letter-spacing:2px;font-size:.75em}#spaces-notice.flash{animation:flash 2s infinite}.add-subtract-buttons button{width:50px;height:50px;padding:6px;box-sizing:content-box;margin:0 .4em .4em .4em;font-size:2.5em;line-height:1;border-radius:50%;text-align:center;transition:border .3s;position:absolute;z-index:800}.add-subtract-buttons svg{width:36px;height:36px;margin-top:4px}#add-button{right:1em;bottom:.5em}#subtract-button{left:1em;bottom:.5em;pointer-events:none}#subtract-button.active{pointer-events:auto}#add-button[loading=true],#subtract-button[loading=true]{opacity:0;animation:fadedown 1s ease-out 4.5s forwards}@media only screen and (orientation:landscape){#add-button,#subtract-button{bottom:calc(50vh - 54px)}#add-button{right:.5em}#subtract-button{left:.5em}}nav.main-nav{position:fixed;top:1em;z-index:100;left:50%;opacity:0;animation:fadedown .75s ease-out 4.5s forwards;width:200px;margin-left:-100px}@media only screen and (min-height:800px){nav.main-nav{top:2em}}nav.main-nav button{width:32px;height:32px;padding:0;margin:0 .5em;display:inline;padding:4px;box-sizing:border-box;transition:transform .3s}nav.main-nav button:hover{transform:scale(1.5)}nav.main-nav button svg{width:24px;height:24px}.close-screen-background-button{background:0 0;border:none;cursor:auto}.close-screen-button{margin-top:1em;background:0 0;transition:transform .3s;border:0}.close-screen-button svg{width:30px;height:30px}.close-screen-button:hover{transform:scale(1.125)}.coffee{padding:.938em 1.15em;border-radius:7px;margin:.5em 0 .75em 0;display:inline-block;text-decoration:none;font-weight:600;transition:transform .3s;box-shadow:2px 2px 18px rgba(0,0,0,.1)}.coffee:hover{transform:scale(1.125)}.coffee svg{display:inline-block;width:1em;height:1em;margin-bottom:-4px}.copyright,.learn-more{font-size:.875em}.learn-more{text-decoration:underline}.copyright a,.learn-more a{transition:opacity .3s;text-decoration:none}.copyright a:hover,.learn-more a:hover{opacity:.4}#settings section{border-radius:11px;padding:.5em 1em;box-sizing:border-box;max-width:280px;line-height:3.25;margin-top:1em}#settings h2{padding-top:3em}#settings h3,#settings h4{font-size:1em}#settings h3{display:inline-block}#set-limit{margin-bottom:1em}input[type=number]{margin-left:.25em;width:50px;font-size:1.25em;padding-left:6px;border-radius:4px}.custom-row{display:flex;align-items:center;justify-content:center;margin-bottom:1.4em;margin-top:1em}.custom-row h3{width:auto;margin:0}.theme-menu{margin:1em 0}.theme-menu button{border-radius:5px;border:none;font-size:1.25em;width:40px;height:40px;text-align:center;margin:.3em;transition:transform .3s;padding:0}.theme-menu button:hover{transform:scale(1.125)}.theme-menu input{display:inline-block}#reset button{padding:.875em 1.25em;margin-top:.5em;transition:transform .3s;font-size:1.125em}#reset button:hover{transform:scale(1.125)}.toggle-button{background:0;border:0;cursor:pointer;height:26px;width:58px;position:relative;border:1px solid rgba(255,255,255,0);border:none;margin-left:16px;transition:transform .3s}.toggle-button:focus{outline:0}.toggle-button:hover{transform:scale(1.125)}.toggle-button span:nth-child(1){position:absolute;top:0;left:0;height:26px;width:58px;border-radius:25px;transition:.3s}.toggle-button span:nth-child(2){position:absolute;top:7px;width:16px;height:16px;border-radius:50%;transition:.3s;left:39px}body[limit-warning=off] .toggle-button span:nth-child(2){left:6px}body[limit-warning=off] .toggle-off-text{border-bottom:1px solid #fff;font-weight:600}body[limit-warning=on] .toggle-on-text{border-bottom:1px solid #fff;font-weight:600}#set-limit-container{transition:opacity .3s}body[limit-warning=off] #set-limit-container{opacity:.2;pointer-events:none}body[limit-warning=on] #set-limit-container{opacity:1;pointer-events:auto}a,body,button{color:#fff}input{background:#fff;color:#111}svg{fill:#fff}.coffee{background-color:#fb6263;color:#fff}#settings section{border:2px solid rgba(255,255,255,.2)}.toggle-button span:nth-child(1){border:2px solid #fff}.toggle-button span:nth-child(2){background-color:#fff}.add-subtract-buttons button{border:1px solid rgba(255,255,255,.4);transition:.3s}.add-subtract-buttons button:hover{border:1px solid rgba(255,255,255,.8)}#theme-btn-blue-steel,body[theme=blue-steel]{background-color:#004291}body[theme=blue-steel] .coffee{background-color:#025dc6}#theme-btn-vaporwave,body[theme=vaporwave]{background-color:#ed1e79}body[theme=vaporwave] .coffee{background-color:#f73b8d}#theme-btn-grey,body[theme=grey]{background-color:#607d8b}body[theme=grey] .coffee{background-color:#7796a5}#theme-btn-blueberry,body[theme=blueberry]{background-color:#a700a5}body[theme=blueberry] .coffee{background-color:#d225d0}#theme-btn-green,body[theme=green]{background-color:#00ad98}body[theme=green] .coffee{background-color:#1fc5b1}#theme-btn-orange,body[theme=orange]{background-color:#ffac02}body[theme=orange] .coffee{background-color:#ffb825}body[theme=blue-steel] #theme-btn-blue-steel,body[theme=blueberry] #theme-btn-blueberry,body[theme=green] #theme-btn-green,body[theme=grey] #theme-btn-grey,body[theme=orange] #theme-btn-orange,body[theme=vaporwave] #theme-btn-vaporwave{box-shadow:0 0 2px 2px #fff}#theme-btn-tux,body[theme=tux]{background:#141516;color:#ced4e2}body[theme=tux] #reset button{color:#ced4e2}body[theme=tux] a{color:#fff}body[theme=tux] button,body[theme=tux] input{color:#141516}body[theme=tux] input{background:#ced4e2}body[theme=tux] svg{fill:#ced4e2}body[theme=tux] .intro h1{background:linear-gradient(90deg,rgba(206,212,226,0) 0,#ced4e2 33.33%,#ced4e2 66.66%,rgba(206,212,226,0) 100%);background-clip:text;text-fill-color:transparent;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-repeat:no-repeat;background-size:300% auto;background-position:200% 0;animation:swipe 5s ease-in-out}#theme-btn-tux{background:#141516;color:#ced4e2}body[theme=tux] #theme-btn-tux{box-shadow:0 0 2px 2px #ced4e2}body[theme=tux] .add-subtract-buttons button{border:1px solid rgba(206,212,226,.4);transition:.3s}body[theme=tux] .add-subtract-buttons button:hover{border:1px solid #ced4e2}body[theme=tux] .toggle-button span:nth-child(1){border:2px solid #ced4e2}body[theme=tux] .toggle-button span:nth-child(2){background-color:#ced4e2}body[theme=graphite]{background:#f3f3f3}body[theme=graphite],body[theme=graphite] button,body[theme=graphite] p a{color:#333}body[theme=graphite] .add-subtract-buttons svg,body[theme=graphite] .main-nav svg{fill:#333}body[theme=graphite] .toggle-button span:nth-child(1){border:2px solid #333}body[theme=graphite] .toggle-button span:nth-child(2){background-color:#333}body[theme=graphite] #settings p,body[theme=graphite] #settings section{border:2px solid rgba(0,0,0,.05)}body[theme=graphite] .intro h1{background:linear-gradient(90deg,rgba(11,11,11,0) 0,#0b0b0b 33.33%,#0b0b0b 66.66%,rgba(11,11,11,0) 100%);background-clip:text;text-fill-color:transparent;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-repeat:no-repeat;background-size:300% auto;background-position:200% 0;animation:swipe 5s ease-in-out}#theme-btn-graphite{background:#f3f3f3;color:#333}body[theme=graphite] #theme-btn-graphite{box-shadow:0 0 2px 2px #333}body[theme=graphite] .add-subtract-buttons button{border:1px solid rgba(0,0,0,.09);transition:.3s}body[theme=graphite] .add-subtract-buttons button:hover{border:1px solid rgba(0,0,0,.3)}body[theme=graphite] .close-screen-button svg{fill:#333}body[theme=graphite] .add-subtract-buttons button{border:1px solid rgba(3,3,3,.2);transition:.3s}body[theme=graphite] .add-subtract-buttons button:hover{border:1px solid rgba(3,3,3,.8)}#info,#reset,#settings{opacity:0;height:0;min-height:0;overflow:hidden;pointer-events:none}section .container{pointer-events:none}body[screen=info] #info,body[screen=reset] #reset,body[screen=settings] #settings{height:100%;min-height:600px;overflow:visible;opacity:1}body[screen=info] #info .container,body[screen=reset] #reset .container,body[screen=settings] #settings .container{pointer-events:auto}.main{opacity:.02;transition:.3s}body[screen=app] .main{opacity:1}
+      * {
+        font-family: Inter, sans-serif;
+        line-height: 1.5;
+        touch-action: manipulation;
+      }
+      body {
+        margin: 0;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      body.user-is-tabbing button:focus {
+        outline: 2px solid #7aacfe !important;
+        outline: 5px auto -webkit-focus-ring-color !important;
+      }
+      button {
+        background: 0;
+      }
+      button,
+      input {
+        cursor: pointer;
+        border: 0;
+      }
+      button:focus {
+        border: none;
+        outline: 0;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        transition: opacity 0.3s;
+      }
+      .inactive {
+        display: none;
+      }
+      .visually-hidden {
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+      }
+      .intro h1 {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0,
+          #fff 33.33%,
+          #fff 66.66%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 300% auto;
+        background-position: 200% 0;
+        animation: swipe 5s ease-in-out;
+      }
+      @media only screen and (min-width: 700px) {
+        .intro h1 {
+          font-size: 2.5em;
+        }
+      }
+      @media only screen and (min-width: 1000px) {
+        .intro h1 {
+          font-size: 3em;
+        }
+      }
+      .intro h2 {
+        font-size: 1.125em;
+        font-weight: 400;
+        animation: introfade 3s ease-in-out 1.5s;
+        opacity: 0;
+        width: 84%;
+      }
+      @media only screen and (min-width: 800px) {
+        .intro h2 {
+          font-size: 1.5em;
+        }
+      }
+      #info h2 {
+        font-size: 1em;
+        width: 84%;
+        font-weight: 400;
+      }
+      @keyframes swipe {
+        0% {
+          background-position: 200% 0;
+        }
+        35% {
+          background-position: 50% 0;
+        }
+        65% {
+          background-position: 50% 0;
+        }
+        100% {
+          background-position: -200%;
+        }
+      }
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes fadedown {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes flash {
+        0% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+        }
+        60% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes introfade {
+        0% {
+          opacity: 0;
+          transform: translateY(-7px);
+        }
+        25% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        75% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .count-layout {
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+      }
+      @media only screen and (max-height: 500px) {
+        .count-layout {
+          width: 40%;
+        }
+      }
+      @media only screen and (min-width: 600px) and (min-height: 600px) {
+        .count-layout {
+          font-size: 130%;
+        }
+      }
+      @media only screen and (min-width: 800px) and (min-height: 600px) {
+        .count-layout {
+          font-size: 150%;
+        }
+      }
+      @media only screen and (min-width: 1050px) and (min-height: 600px) {
+        .count-layout {
+          font-size: 200%;
+        }
+      }
+      #count-container {
+        line-height: 1;
+        font-size: 16em;
+        text-align: center;
+        opacity: 0;
+        animation: fadedown 1s ease-out 4s forwards;
+      }
+      #count-container.two-digits {
+        line-height: 1;
+        font-size: 11em;
+        text-align: center;
+      }
+      #count-container.three-digits {
+        line-height: 1;
+        font-size: 7.5em;
+        text-align: center;
+      }
+      #count-container.four-digits {
+        line-height: 1;
+        font-size: 6.25em;
+        text-align: center;
+      }
+      @media only screen and (min-width: 1000px) and (min-height: 600px),
+        (min-height: 1000px) and (min-width: 600px) {
+        #count-container,
+        #count-container.four-digits,
+        #count-container.three-digits,
+        #count-container.two-digits {
+          font-size: 15em;
+        }
+      }
+      @media only screen and (min-width: 1300px) and (min-height: 600px),
+        (min-height: 1300px) and (min-width: 600px) {
+        #count-container,
+        #count-container.four-digits,
+        #count-container.three-digits,
+        #count-container.two-digits {
+          font-size: 18em;
+        }
+      }
+      @media only screen and (min-width: 2000px) and (min-height: 1000px) {
+        #count-container,
+        #count-container.four-digits,
+        #count-container.three-digits,
+        #count-container.two-digits {
+          font-size: 24em;
+        }
+      }
+      #spaces-container {
+        position: absolute;
+        bottom: 11em;
+        left: calc(50% - 60px);
+        width: 120px;
+        font-size: 0.75em;
+        transition: opacity 0.3s;
+        opacity: 0;
+      }
+      @media only screen and (orientation: landscape) {
+        #spaces-container {
+          bottom: 3em;
+        }
+      }
+      @media only screen and (max-height: 580px) {
+        #spaces-container {
+          bottom: 3em;
+        }
+      }
+      @media only screen and (orientation: landscape) and (min-height: 400px) {
+        #spaces-container {
+          bottom: 4em;
+        }
+      }
+      @media only screen and (orientation: landscape) and (min-height: 600px) {
+        #spaces-container {
+          font-size: 1em;
+          left: calc(50% - 100px);
+          width: 200px;
+        }
+      }
+      @media only screen and (orientation: landscape) and (min-height: 800px) {
+        #spaces-container {
+          font-size: 1.3em;
+          left: calc(50% - 100px);
+          width: 200px;
+        }
+      }
+      body[limit-warning="on"] #spaces-container[loading="true"] {
+        animation: fadedown 1s ease-out 4.5s forwards;
+      }
+      body[limit-warning="on"] #spaces-container[loading="done"] {
+        opacity: 1;
+      }
+      #spaces-available {
+        font-size: 2.125em;
+      }
+      #spaces-notice {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.75em;
+      }
+      #spaces-notice.flash {
+        animation: flash 2s infinite;
+      }
+      .add-subtract-buttons button {
+        width: 50px;
+        height: 50px;
+        padding: 6px;
+        box-sizing: content-box;
+        margin: 0 0.4em 0.4em 0.4em;
+        font-size: 2.5em;
+        line-height: 1;
+        border-radius: 50%;
+        text-align: center;
+        transition: border 0.3s;
+        position: absolute;
+        z-index: 800;
+      }
+      .add-subtract-buttons svg {
+        width: 36px;
+        height: 36px;
+        margin-top: 4px;
+      }
+      #add-button {
+        right: 1em;
+        bottom: 0.5em;
+      }
+      #subtract-button {
+        left: 1em;
+        bottom: 0.5em;
+        pointer-events: none;
+      }
+      #subtract-button.active {
+        pointer-events: auto;
+      }
+      #add-button[loading="true"],
+      #subtract-button[loading="true"] {
+        opacity: 0;
+        animation: fadedown 1s ease-out 4.5s forwards;
+      }
+      @media only screen and (orientation: landscape) {
+        #add-button,
+        #subtract-button {
+          bottom: calc(50vh - 54px);
+        }
+        #add-button {
+          right: 0.5em;
+        }
+        #subtract-button {
+          left: 0.5em;
+        }
+      }
+      nav.main-nav {
+        position: fixed;
+        top: 1em;
+        z-index: 100;
+        left: 50%;
+        opacity: 0;
+        animation: fadedown 0.75s ease-out 4.5s forwards;
+        width: 200px;
+        margin-left: -100px;
+      }
+      @media only screen and (min-height: 800px) {
+        nav.main-nav {
+          top: 2em;
+        }
+      }
+      nav.main-nav button {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        margin: 0 0.5em;
+        display: inline;
+        padding: 4px;
+        box-sizing: border-box;
+        transition: transform 0.3s;
+      }
+      nav.main-nav button:hover {
+        transform: scale(1.5);
+      }
+      nav.main-nav button svg {
+        width: 24px;
+        height: 24px;
+      }
+      .close-screen-background-button {
+        background: 0 0;
+        border: none;
+        cursor: auto;
+      }
+      .close-screen-button {
+        margin-top: 1em;
+        background: 0 0;
+        transition: transform 0.3s;
+        border: 0;
+      }
+      .close-screen-button svg {
+        width: 30px;
+        height: 30px;
+      }
+      .close-screen-button:hover {
+        transform: scale(1.125);
+      }
+      .coffee {
+        padding: 0.938em 1.15em;
+        border-radius: 7px;
+        margin: 0.5em 0 0.75em 0;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.3s;
+        box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.1);
+      }
+      .coffee:hover {
+        transform: scale(1.125);
+      }
+      .coffee svg {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin-bottom: -4px;
+      }
+      .copyright,
+      .learn-more {
+        font-size: 0.875em;
+      }
+      .learn-more {
+        text-decoration: underline;
+      }
+      .copyright a,
+      .learn-more a {
+        transition: opacity 0.3s;
+        text-decoration: none;
+      }
+      .copyright a:hover,
+      .learn-more a:hover {
+        opacity: 0.4;
+      }
+      #settings section {
+        border-radius: 11px;
+        padding: 0.5em 1em;
+        box-sizing: border-box;
+        max-width: 280px;
+        line-height: 3.25;
+        margin-top: 1em;
+      }
+      #settings h2 {
+        padding-top: 3em;
+      }
+      #settings h3,
+      #settings h4 {
+        font-size: 1em;
+      }
+      #settings h3 {
+        display: inline-block;
+      }
+      #set-limit {
+        margin-bottom: 1em;
+      }
+      input[type="number"] {
+        margin-left: 0.25em;
+        width: 50px;
+        font-size: 1.25em;
+        padding-left: 6px;
+        border-radius: 4px;
+      }
+      .custom-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.4em;
+        margin-top: 1em;
+      }
+      .custom-row h3 {
+        width: auto;
+        margin: 0;
+      }
+      .theme-menu {
+        margin: 1em 0;
+      }
+      .theme-menu button {
+        border-radius: 5px;
+        border: none;
+        font-size: 1.25em;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        margin: 0.3em;
+        transition: transform 0.3s;
+        padding: 0;
+      }
+      .theme-menu button:hover {
+        transform: scale(1.125);
+      }
+      .theme-menu input {
+        display: inline-block;
+      }
+      #reset button {
+        padding: 0.875em 1.25em;
+        margin-top: 0.5em;
+        transition: transform 0.3s;
+        font-size: 1.125em;
+      }
+      #reset button:hover {
+        transform: scale(1.125);
+      }
+      .toggle-button {
+        background: 0;
+        border: 0;
+        cursor: pointer;
+        height: 26px;
+        width: 58px;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0);
+        border: none;
+        margin-left: 16px;
+        transition: transform 0.3s;
+      }
+      .toggle-button:focus {
+        outline: 0;
+      }
+      .toggle-button:hover {
+        transform: scale(1.125);
+      }
+      .toggle-button span:nth-child(1) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 26px;
+        width: 58px;
+        border-radius: 25px;
+        transition: 0.3s;
+      }
+      .toggle-button span:nth-child(2) {
+        position: absolute;
+        top: 7px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        transition: 0.3s;
+        left: 39px;
+      }
+      body[limit-warning="off"] .toggle-button span:nth-child(2) {
+        left: 6px;
+      }
+      body[limit-warning="off"] .toggle-off-text {
+        border-bottom: 1px solid #fff;
+        font-weight: 600;
+      }
+      body[limit-warning="on"] .toggle-on-text {
+        border-bottom: 1px solid #fff;
+        font-weight: 600;
+      }
+      #set-limit-container {
+        transition: opacity 0.3s;
+      }
+      body[limit-warning="off"] #set-limit-container {
+        opacity: 0.2;
+        pointer-events: none;
+      }
+      body[limit-warning="on"] #set-limit-container {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      a,
+      body,
+      button {
+        color: #fff;
+      }
+      input {
+        background: #fff;
+        color: #111;
+      }
+      svg {
+        fill: #fff;
+      }
+      .coffee {
+        background-color: #fb6263;
+        color: #fff;
+      }
+      #settings section {
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+      .toggle-button span:nth-child(1) {
+        border: 2px solid #fff;
+      }
+      .toggle-button span:nth-child(2) {
+        background-color: #fff;
+      }
+      .add-subtract-buttons button {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: 0.3s;
+      }
+      .add-subtract-buttons button:hover {
+        border: 1px solid rgba(255, 255, 255, 0.8);
+      }
+      #theme-btn-blue-steel,
+      body[theme="blue-steel"] {
+        background-color: #004291;
+      }
+      body[theme="blue-steel"] .coffee {
+        background-color: #025dc6;
+      }
+      #theme-btn-vaporwave,
+      body[theme="vaporwave"] {
+        background-color: #ed1e79;
+      }
+      body[theme="vaporwave"] .coffee {
+        background-color: #f73b8d;
+      }
+      #theme-btn-grey,
+      body[theme="grey"] {
+        background-color: #607d8b;
+      }
+      body[theme="grey"] .coffee {
+        background-color: #7796a5;
+      }
+      #theme-btn-blueberry,
+      body[theme="blueberry"] {
+        background-color: #a700a5;
+      }
+      body[theme="blueberry"] .coffee {
+        background-color: #d225d0;
+      }
+      #theme-btn-green,
+      body[theme="green"] {
+        background-color: #00ad98;
+      }
+      body[theme="green"] .coffee {
+        background-color: #1fc5b1;
+      }
+      #theme-btn-orange,
+      body[theme="orange"] {
+        background-color: #ffac02;
+      }
+      body[theme="orange"] .coffee {
+        background-color: #ffb825;
+      }
+      body[theme="blue-steel"] #theme-btn-blue-steel,
+      body[theme="blueberry"] #theme-btn-blueberry,
+      body[theme="green"] #theme-btn-green,
+      body[theme="grey"] #theme-btn-grey,
+      body[theme="orange"] #theme-btn-orange,
+      body[theme="vaporwave"] #theme-btn-vaporwave {
+        box-shadow: 0 0 2px 2px #fff;
+      }
+      #theme-btn-tux,
+      body[theme="tux"] {
+        background: #141516;
+        color: #ced4e2;
+      }
+      body[theme="tux"] #reset button {
+        color: #ced4e2;
+      }
+      body[theme="tux"] a {
+        color: #fff;
+      }
+      body[theme="tux"] button,
+      body[theme="tux"] input {
+        color: #141516;
+      }
+      body[theme="tux"] input {
+        background: #ced4e2;
+      }
+      body[theme="tux"] svg {
+        fill: #ced4e2;
+      }
+      body[theme="tux"] .intro h1 {
+        background: linear-gradient(
+          90deg,
+          rgba(206, 212, 226, 0) 0,
+          #ced4e2 33.33%,
+          #ced4e2 66.66%,
+          rgba(206, 212, 226, 0) 100%
+        );
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 300% auto;
+        background-position: 200% 0;
+        animation: swipe 5s ease-in-out;
+      }
+      #theme-btn-tux {
+        background: #141516;
+        color: #ced4e2;
+      }
+      body[theme="tux"] #theme-btn-tux {
+        box-shadow: 0 0 2px 2px #ced4e2;
+      }
+      body[theme="tux"] .add-subtract-buttons button {
+        border: 1px solid rgba(206, 212, 226, 0.4);
+        transition: 0.3s;
+      }
+      body[theme="tux"] .add-subtract-buttons button:hover {
+        border: 1px solid #ced4e2;
+      }
+      body[theme="tux"] .toggle-button span:nth-child(1) {
+        border: 2px solid #ced4e2;
+      }
+      body[theme="tux"] .toggle-button span:nth-child(2) {
+        background-color: #ced4e2;
+      }
+      body[theme="graphite"] {
+        background: #f3f3f3;
+      }
+      body[theme="graphite"],
+      body[theme="graphite"] button,
+      body[theme="graphite"] p a {
+        color: #333;
+      }
+      body[theme="graphite"] .add-subtract-buttons svg,
+      body[theme="graphite"] .main-nav svg {
+        fill: #333;
+      }
+      body[theme="graphite"] .toggle-button span:nth-child(1) {
+        border: 2px solid #333;
+      }
+      body[theme="graphite"] .toggle-button span:nth-child(2) {
+        background-color: #333;
+      }
+      body[theme="graphite"] #settings p,
+      body[theme="graphite"] #settings section {
+        border: 2px solid rgba(0, 0, 0, 0.05);
+      }
+      body[theme="graphite"] .intro h1 {
+        background: linear-gradient(
+          90deg,
+          rgba(11, 11, 11, 0) 0,
+          #0b0b0b 33.33%,
+          #0b0b0b 66.66%,
+          rgba(11, 11, 11, 0) 100%
+        );
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 300% auto;
+        background-position: 200% 0;
+        animation: swipe 5s ease-in-out;
+      }
+      #theme-btn-graphite {
+        background: #f3f3f3;
+        color: #333;
+      }
+      body[theme="graphite"] #theme-btn-graphite {
+        box-shadow: 0 0 2px 2px #333;
+      }
+      body[theme="graphite"] .add-subtract-buttons button {
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        transition: 0.3s;
+      }
+      body[theme="graphite"] .add-subtract-buttons button:hover {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+      }
+      body[theme="graphite"] .close-screen-button svg {
+        fill: #333;
+      }
+      body[theme="graphite"] .add-subtract-buttons button {
+        border: 1px solid rgba(3, 3, 3, 0.2);
+        transition: 0.3s;
+      }
+      body[theme="graphite"] .add-subtract-buttons button:hover {
+        border: 1px solid rgba(3, 3, 3, 0.8);
+      }
+      #info,
+      #reset,
+      #settings {
+        opacity: 0;
+        height: 0;
+        min-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      section .container {
+        pointer-events: none;
+      }
+      body[screen="info"] #info,
+      body[screen="reset"] #reset,
+      body[screen="settings"] #settings {
+        height: 100%;
+        min-height: 600px;
+        overflow: visible;
+        opacity: 1;
+      }
+      body[screen="info"] #info .container,
+      body[screen="reset"] #reset .container,
+      body[screen="settings"] #settings .container {
+        pointer-events: auto;
+      }
+      .main {
+        opacity: 0.02;
+        transition: 0.3s;
+      }
+      body[screen="app"] .main {
+        opacity: 1;
+      }
     </style>
+  </head>
 
-</head>
+  <body>
+    <header class="cover intro">
+      <h1>Compteur</h1>
+      <h2>Le compteur de Raph le bg</h2>
+    </header>
 
-<body>
-
-<header class="cover intro">
-    <h1>Compteur</h1>
-    <h2>Le compteur de Raph le bg</h2>
-</header>
-
-<main class="cover main">
-    <div id="count-layout">
+    <main class="cover main">
+      <div id="count-layout">
         <div id="count-container"></div>
-    </div>
-    <div id="spaces-container">
+      </div>
+      <div id="spaces-container">
         <div id="spaces-available"></div>
         <div id="spaces-notice"></div>
-    </div>
-    <div class="add-subtract-buttons">
+      </div>
+      <div class="add-subtract-buttons">
         <button id="add-button" onclick="add()" aria-label="Add">
-            <svg>
-                <use xlink:href="#icon-add"></use>
-            </svg>
+          <svg>
+            <use xlink:href="#icon-add"></use>
+          </svg>
         </button>
         <button id="subtract-button" onclick="subtract()" aria-label="Subtract">
-            <svg>
-                <use xlink:href="#icon-subtract"></use>
-            </svg>
+          <svg>
+            <use xlink:href="#icon-subtract"></use>
+          </svg>
         </button>
-    </div>
-</main>
+      </div>
+    </main>
 
-
-<nav class="main-nav">
-    <button onclick="activateScreen(this)" value="info" aria-label="Info">
+    <nav class="main-nav">
+      <button onclick="activateScreen(this)" value="info" aria-label="Info">
         <svg>
-            <use xlink:href="#icon-info"></use>
+          <use xlink:href="#icon-info"></use>
         </svg>
-    </button>
-    <button onclick="activateScreen(this)" value="settings" aria-label="Settings">
+      </button>
+      <button
+        onclick="activateScreen(this)"
+        value="settings"
+        aria-label="Settings"
+      >
         <svg>
-            <use xlink:href="#icon-settings"></use>
+          <use xlink:href="#icon-settings"></use>
         </svg>
-    </button>
-    <button onclick="activateScreen(this)" value="reset" aria-label="Reset">
+      </button>
+      <button onclick="activateScreen(this)" value="reset" aria-label="Reset">
         <svg>
-            <use xlink:href="#icon-reset"></use>
+          <use xlink:href="#icon-reset"></use>
         </svg>
-    </button>
+      </button>
+    </nav>
 
-</nav>
+    <button
+      class="cover close-screen-background-button"
+      onclick="closeScreen()"
+      aria-label="Close Screen"
+    ></button>
 
-
-<button class="cover close-screen-background-button" onclick="closeScreen()" aria-label="Close Screen"></button>
-
-
-<section id="info" class="cover screen">
-    <div class="container">
+    <section id="info" class="cover screen">
+      <div class="container">
         <header>
-            <h1>Compteur</h1>
-            <h2>
-                Le compteur de Raph le bg
-            </h2>
+          <h1>Compteur</h1>
+          <h2>Le compteur de Raph le bg</h2>
         </header>
         <footer>
-            <button class="close-screen-button" onclick="closeScreen()" aria-label="Close Screen">
-                <svg>
-                    <use xlink:href="#icon-close"></use>
-                </svg>
-            </button>
+          <button
+            class="close-screen-button"
+            onclick="closeScreen()"
+            aria-label="Close Screen"
+          >
+            <svg>
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
         </footer>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-
-<section id="settings" class="cover screen">
-    <div class="container">
-
+    <section id="settings" class="cover screen">
+      <div class="container">
         <h2>Paramètres</h2>
 
         <section>
-            <h3>Nombre =</h3>
-            <input type="number" id="set-count" min="0" max="9999" oninput="updateCountFromNumber()">
-            <label for="set-count" class="visually-hidden">Nombre</label>
+          <h3>Nombre =</h3>
+          <input
+            type="number"
+            id="set-count"
+            min="0"
+            max="9999"
+            oninput="updateCountFromNumber()"
+          />
+          <label for="set-count" class="visually-hidden">Nombre</label>
         </section>
         <section>
-            <div class="custom-row">
-                <h3>Limites <span class="toggle-off-text">Non</span> / <span class="toggle-on-text">Oui</span></h3>
-                <!-- <label for="limit-checkbox" class="visually-hidden">Toggle Limit Warning</label> -->
-                <button class="toggle-button" aria-label="Toggle Limit Warning" onclick="toggle_limit_warning()">
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+          <div class="custom-row">
+            <h3>
+              Limites <span class="toggle-off-text">Non</span> /
+              <span class="toggle-on-text">Oui</span>
+            </h3>
+            <!-- <label for="limit-checkbox" class="visually-hidden">Toggle Limit Warning</label> -->
+            <button
+              class="toggle-button"
+              aria-label="Toggle Limit Warning"
+              onclick="toggle_limit_warning()"
+            >
+              <span></span>
+              <span></span>
+            </button>
+          </div>
 
-            <div id="set-limit-container">
-                <h3>Maximum =</h3>
-                <input type="number" id="set-limit" min="1" max="9999" oninput="updateLimit()">
-                <label for="set-limit" class="visually-hidden">Set Limit</label>
-            </div>
+          <div id="set-limit-container">
+            <h3>Maximum =</h3>
+            <input
+              type="number"
+              id="set-limit"
+              min="1"
+              max="9999"
+              oninput="updateLimit()"
+            />
+            <label for="set-limit" class="visually-hidden">Set Limit</label>
+          </div>
         </section>
 
         <section>
-            <h4 class="visually-hidden">Thème</h4>
-            <div class="theme-menu">
-                <button id="theme-btn-tux"
-                        name="theme" value="tux" onclick="switchTheme(this)" aria-label="Tux">
-                </button>
-                <button id="theme-btn-graphite"
-                        name="theme" value="graphite" onclick="switchTheme(this)" aria-label="Graphite">
-                </button>
-                <button id="theme-btn-blue-steel"
-                        name="theme" value="blue-steel" onclick="switchTheme(this)" aria-label="Blue Steel">
-                </button>
-                <button id="theme-btn-vaporwave"
-                        name="theme" value="vaporwave" onclick="switchTheme(this)" aria-label="Vaporwave">
-                </button>
+          <h4 class="visually-hidden">Thème</h4>
+          <div class="theme-menu">
+            <button
+              id="theme-btn-tux"
+              name="theme"
+              value="tux"
+              onclick="switchTheme(this)"
+              aria-label="Tux"
+            ></button>
+            <button
+              id="theme-btn-graphite"
+              name="theme"
+              value="graphite"
+              onclick="switchTheme(this)"
+              aria-label="Graphite"
+            ></button>
+            <button
+              id="theme-btn-blue-steel"
+              name="theme"
+              value="blue-steel"
+              onclick="switchTheme(this)"
+              aria-label="Blue Steel"
+            ></button>
+            <button
+              id="theme-btn-vaporwave"
+              name="theme"
+              value="vaporwave"
+              onclick="switchTheme(this)"
+              aria-label="Vaporwave"
+            ></button>
 
-                <button id="theme-btn-grey"
-                        name="theme" value="grey" onclick="switchTheme(this)" aria-label="Grey">
-                </button>
-                <button id="theme-btn-blueberry"
-                        name="theme" value="blueberry" onclick="switchTheme(this)" aria-label="Blueberry">
-                </button>
-                <button id="theme-btn-green"
-                        name="theme" value="green" onclick="switchTheme(this)" aria-label="Green">
-                </button>
-                <button id="theme-btn-orange"
-                        name="theme" value="orange" onclick="switchTheme(this)" aria-label="Orange">
-                </button>
-            </div>
+            <button
+              id="theme-btn-grey"
+              name="theme"
+              value="grey"
+              onclick="switchTheme(this)"
+              aria-label="Grey"
+            ></button>
+            <button
+              id="theme-btn-blueberry"
+              name="theme"
+              value="blueberry"
+              onclick="switchTheme(this)"
+              aria-label="Blueberry"
+            ></button>
+            <button
+              id="theme-btn-green"
+              name="theme"
+              value="green"
+              onclick="switchTheme(this)"
+              aria-label="Green"
+            ></button>
+            <button
+              id="theme-btn-orange"
+              name="theme"
+              value="orange"
+              onclick="switchTheme(this)"
+              aria-label="Orange"
+            ></button>
+          </div>
         </section>
 
-        <button class="close-screen-button" onclick="closeScreen()" aria-label="Fermer">
-            <svg>
-                <use xlink:href="#icon-close"></use>
-            </svg>
+        <button
+          class="close-screen-button"
+          onclick="closeScreen()"
+          aria-label="Fermer"
+        >
+          <svg>
+            <use xlink:href="#icon-close"></use>
+          </svg>
         </button>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-<section id="reset" class="cover screen">
-    <div class="container">
+    <section id="reset" class="cover screen">
+      <div class="container">
         <h2>Réinitialiser le compteur ?</h2>
-        <button onclick="reset(); closeScreen()" aria-label="Yes">
-            Oui
-        </button>
-        <br>
-        <button onclick="closeScreen()" aria-label="Cancel">
-            Annuler
-        </button>
-    </div>
-</section>
+        <button onclick="reset(); closeScreen()" aria-label="Yes">Oui</button>
+        <br />
+        <button onclick="closeScreen()" aria-label="Cancel">Annuler</button>
+      </div>
+    </section>
 
-
-
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0;" width="0" height="0">
-    <defs>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0"
+      width="0"
+      height="0"
+    >
+      <defs>
         <symbol id="icon-info" viewBox="0 0 24 24">
-            <title>Infos</title>
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+          <title>Infos</title>
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+          />
         </symbol>
-    </defs>
-</svg>
+      </defs>
+    </svg>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0;" width="0" height="0">
-    <defs>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0"
+      width="0"
+      height="0"
+    >
+      <defs>
         <symbol id="icon-settings" viewBox="0 0 24 24">
-            <title>Paramètres</title>
-            <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+          <title>Paramètres</title>
+          <path
+            d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"
+          />
         </symbol>
-    </defs>
-</svg>
+      </defs>
+    </svg>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0;" width="0" height="0">
-    <defs>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0"
+      width="0"
+      height="0"
+    >
+      <defs>
         <symbol id="icon-install" viewBox="0 0 24 24">
-            <title>Installer</title>
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+          <title>Installer</title>
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
         </symbol>
-    </defs>
-</svg>
+      </defs>
+    </svg>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0;" width="0" height="0">
-    <defs>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0"
+      width="0"
+      height="0"
+    >
+      <defs>
         <symbol id="icon-reset" viewBox="0 0 24 24">
-            <title>Réinitialiser</title>
-            <path d="M17.6,6.3C16.2,4.9,14.2,4,12,4c-4.4,0-8,3.6-8,8s3.6,8,8,8c3.7,0,6.8-2.5,7.7-6h-2.1c-0.8,2.3-3,4-5.6,4c-3.3,0-6-2.7-6-6 s2.7-6,6-6c1.7,0,3.1,0.7,4.2,1.8L13,11h7V4L17.6,6.3z"/>
+          <title>Réinitialiser</title>
+          <path
+            d="M17.6,6.3C16.2,4.9,14.2,4,12,4c-4.4,0-8,3.6-8,8s3.6,8,8,8c3.7,0,6.8-2.5,7.7-6h-2.1c-0.8,2.3-3,4-5.6,4c-3.3,0-6-2.7-6-6 s2.7-6,6-6c1.7,0,3.1,0.7,4.2,1.8L13,11h7V4L17.6,6.3z"
+          />
         </symbol>
-    </defs>
-</svg>
+      </defs>
+    </svg>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0;" width="0" height="0">
-    <defs>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0"
+      width="0"
+      height="0"
+    >
+      <defs>
         <symbol id="icon-add" viewBox="0 0 24 24">
-            <title>Ajouter</title>
-            <path d="M20.8,10.46v3.08H13.54V20.8H10.46V13.54H3.2V10.46h7.26V3.2h3.08v7.26Z"/>
+          <title>Ajouter</title>
+          <path
+            d="M20.8,10.46v3.08H13.54V20.8H10.46V13.54H3.2V10.46h7.26V3.2h3.08v7.26Z"
+          />
         </symbol>
-    </defs>
-</svg>
+      </defs>
+    </svg>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0;" width="0" height="0">
-    <defs>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0"
+      width="0"
+      height="0"
+    >
+      <defs>
         <symbol id="icon-subtract" viewBox="0 0 24 24">
-            <title>Soustraire</title>
-            <path d="M20.8,10.5v3.1h-7.3h-3.1H3.2v-3.1h7.3h3.1H20.8z"/>
+          <title>Soustraire</title>
+          <path d="M20.8,10.5v3.1h-7.3h-3.1H3.2v-3.1h7.3h3.1H20.8z" />
         </symbol>
-    </defs>
-</svg>
+      </defs>
+    </svg>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0;" width="0" height="0">
-    <defs>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0"
+      width="0"
+      height="0"
+    >
+      <defs>
         <symbol id="icon-close" viewBox="0 0 24 24">
-            <title>Fermer</title>
-            <path d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+          <title>Fermer</title>
+          <path
+            d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+          />
         </symbol>
-    </defs>
-</svg>
+      </defs>
+    </svg>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0;" width="0" height="0">
-    <defs>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0"
+      width="0"
+      height="0"
+    >
+      <defs>
         <symbol id="icon-heart" viewBox="0 0 24 24">
-            <title>Coeur</title>
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          <title>Coeur</title>
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+          />
         </symbol>
-    </defs>
-</svg>
+      </defs>
+    </svg>
 
-
-<script>
-    const _0x1cf7=['innerHTML','screen','reset-checkbox-2','zero-notice','single-digit','limit-number','three-digits','ServiceWorker\x20registration\x20successful\x20with\x20scope:\x20','classList','2wIbssT','theme-btn-','loading','user-is-tabbing','126047CJAfWQ','count','ServiceWorker\x20registration\x20failed:\x20','setItem','simplecounter.app','subtract-button','keyCode','getElementsByTagName','flash','904254Qpyufi','slice','inactive','330798MEGpIe','8gUpBRl','764898rOjSZA','className','setAttribute','off','log','five-digits','getElementById','serviceWorker','getItem','spaces-notice','two-digits','true','value','load','app','done','then','spaces-container','BODY','service-worker.js','limit-warning','mousedown','58534mQGHds','limit\x20reached','theme','2923790KHUUEg','175586CLMuKt','active','register','remove','keydown','hostname','count-container','checked','add','body','set-count','tux','storage','none','addEventListener','available','reset-checkbox','removeEventListener','keyup','spaces-available','four-digits'];const _0x11f287=_0x4d7d;(function(_0x522c60,_0xe6f14c){const _0x4a5ff0=_0x4d7d;while(!![]){try{const _0x449957=-parseInt(_0x4a5ff0(0xfe))+parseInt(_0x4a5ff0(0xf0))*parseInt(_0x4a5ff0(0xec))+-parseInt(_0x4a5ff0(0xf9))+-parseInt(_0x4a5ff0(0xfc))+-parseInt(_0x4a5ff0(0xce))+-parseInt(_0x4a5ff0(0xca))*parseInt(_0x4a5ff0(0xfd))+parseInt(_0x4a5ff0(0xcd));if(_0x449957===_0xe6f14c)break;else _0x522c60['push'](_0x522c60['shift']());}catch(_0xbec50f){_0x522c60['push'](_0x522c60['shift']());}}}(_0x1cf7,0x81e6c));let app=document[_0x11f287(0xf7)](_0x11f287(0xc6))[0x0],theme,count,count_container=document[_0x11f287(0x104)](_0x11f287(0xd4)),set_count=document[_0x11f287(0x104)](_0x11f287(0xd8)),subtract_button=document[_0x11f287(0x104)](_0x11f287(0xf5)),add_button=document['getElementById']('add-button'),limit_warning,limit_number,set_limit=document[_0x11f287(0x104)]('set-limit'),spaces_container=document[_0x11f287(0x104)](_0x11f287(0xc5)),spaces_available=document[_0x11f287(0x104)](_0x11f287(0xe1)),spaces_notice=document['getElementById'](_0x11f287(0x107)),spaces,reset_checkbox=document[_0x11f287(0x104)](_0x11f287(0xde)),reset_checkbox_2=document[_0x11f287(0x104)](_0x11f287(0xe5)),reset_notice=document['getElementById']('reset-notice'),zero_notice=document['getElementById'](_0x11f287(0xe6));function init(){const _0x2aa5df=_0x11f287;localStorage['getItem']('count')==null?(count=0x0,localStorage[_0x2aa5df(0xf3)]('count',0x0)):count=parseInt(localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xf1)));localStorage['getItem'](_0x2aa5df(0xcc))==null?(theme='tux',localStorage[_0x2aa5df(0xf3)](_0x2aa5df(0xcc),_0x2aa5df(0xd9))):(theme=localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xcc)),app[_0x2aa5df(0x100)](_0x2aa5df(0xcc),theme));if(localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xc8))==null)limit_warning=_0x2aa5df(0x101),localStorage['setItem'](_0x2aa5df(0xc8),'off'),app['setAttribute'](_0x2aa5df(0xc8),_0x2aa5df(0x101));else localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xc8))=='on'?(limit_warning='on',localStorage[_0x2aa5df(0xf3)](_0x2aa5df(0xc8),'on'),app['setAttribute'](_0x2aa5df(0xc8),'on')):(limit_warning='off',localStorage[_0x2aa5df(0xf3)](_0x2aa5df(0xc8),_0x2aa5df(0x101)),app[_0x2aa5df(0x100)](_0x2aa5df(0xc8),_0x2aa5df(0x101)));localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xe8))==null?(limit_number='20',localStorage[_0x2aa5df(0xf3)](_0x2aa5df(0xe8),'20')):limit_number=parseInt(localStorage['getItem'](_0x2aa5df(0xe8))),app[_0x2aa5df(0x100)](_0x2aa5df(0xe4),_0x2aa5df(0x10c)),loadUIAnimation(),updateUI();}init();function loadUIAnimation(){const _0x33acd2=_0x11f287;spaces_container[_0x33acd2(0x100)](_0x33acd2(0xee),_0x33acd2(0x109)),add_button[_0x33acd2(0x100)](_0x33acd2(0xee),_0x33acd2(0x109)),subtract_button['setAttribute'](_0x33acd2(0xee),_0x33acd2(0x109)),setTimeout(function(){const _0x31f85d=_0x33acd2;spaces_container[_0x31f85d(0x100)](_0x31f85d(0xee),_0x31f85d(0x10d)),add_button[_0x31f85d(0x100)](_0x31f85d(0xee),_0x31f85d(0x10d)),subtract_button[_0x31f85d(0x100)](_0x31f85d(0xee),_0x31f85d(0x10d));},0x1964);}function add(){count=count+0x1,updateCount();}function subtract(){const _0xd40c8e=_0x11f287;location[_0xd40c8e(0xd3)]==_0xd40c8e(0xf4)&&(count=count-0x1,updateCount());}function reset(){count=0x0,updateCount();}function updateCount(){const _0x2001ca=_0x11f287;localStorage[_0x2001ca(0xf3)]('count',count),updateUI();}function updateCountFromNumber(){const _0x4de96b=_0x11f287;set_count[_0x4de96b(0x10a)]['length']>0x4&&(set_count['value']=set_count[_0x4de96b(0x10a)][_0x4de96b(0xfa)](0x0,0x4)),count=parseInt(set_count[_0x4de96b(0x10a)]),updateCount();}function updateLimit(){const _0x48642e=_0x11f287;localStorage[_0x48642e(0xf3)](_0x48642e(0xe8),set_limit[_0x48642e(0x10a)]),updateUI();}function toggle_limit_warning(){const _0x3f62e3=_0x11f287;localStorage[_0x3f62e3(0x106)](_0x3f62e3(0xc8))==_0x3f62e3(0x101)?(limit_warning='on',localStorage[_0x3f62e3(0xf3)](_0x3f62e3(0xc8),'on'),app['setAttribute'](_0x3f62e3(0xc8),'on')):(limit_warning=_0x3f62e3(0x101),localStorage[_0x3f62e3(0xf3)]('limit-warning',_0x3f62e3(0x101)),app[_0x3f62e3(0x100)](_0x3f62e3(0xc8),_0x3f62e3(0x101))),updateUI();}function resetNotice(){const _0x5d77a1=_0x11f287;reset_warning==_0x5d77a1(0x101)?reset():reset_notice[_0x5d77a1(0xff)]=_0x5d77a1(0xcf);}function updateTheme(_0x4264ab){const _0x494e20=_0x11f287;localStorage['setItem'](_0x494e20(0xcc),_0x4264ab['value']),updateUI();}function activateScreen(_0x27e830){const _0x46ab4d=_0x11f287;app[_0x46ab4d(0x100)](_0x46ab4d(0xe4),_0x27e830[_0x46ab4d(0x10a)]);}function closeScreen(){const _0x4bf170=_0x11f287;app[_0x4bf170(0x100)]('screen',_0x4bf170(0x10c));}function updateUI(){const _0xf46e55=_0x11f287;count=parseInt(localStorage[_0xf46e55(0x106)](_0xf46e55(0xf1))),count_container[_0xf46e55(0xe3)]=count,set_count[_0xf46e55(0x10a)]=count,set_limit[_0xf46e55(0x10a)]=parseInt(localStorage[_0xf46e55(0x106)](_0xf46e55(0xe8))),limit_number=parseInt(localStorage[_0xf46e55(0x106)](_0xf46e55(0xe8))),theme=localStorage[_0xf46e55(0x106)](_0xf46e55(0xcc)),app[_0xf46e55(0x100)](_0xf46e55(0xcc),theme),document[_0xf46e55(0x104)](_0xf46e55(0xed)+theme)['checked']=!![],localStorage[_0xf46e55(0x106)]('limit-warning')=='on'?app['setAttribute'](_0xf46e55(0xc8),'on'):app[_0xf46e55(0x100)](_0xf46e55(0xc8),'off'),spaces=limit_number-count,spaces_available[_0xf46e55(0xe3)]=spaces,spaces<0x1?(spaces_notice['innerHTML']=_0xf46e55(0xcb),spaces_notice['classList']['add'](_0xf46e55(0xf8))):(spaces_notice[_0xf46e55(0xe3)]=_0xf46e55(0xdd),spaces_notice[_0xf46e55(0xeb)][_0xf46e55(0xd1)]('flash')),count>0x0&&(subtract_button[_0xf46e55(0xff)]=_0xf46e55(0xcf)),count>0x9&&(count_container[_0xf46e55(0xff)]=_0xf46e55(0x108)),count>0x63&&(count_container[_0xf46e55(0xff)]=_0xf46e55(0xe9)),count>0x3e7&&(count_container[_0xf46e55(0xff)]=_0xf46e55(0xe2)),count>0x270f&&(count_container[_0xf46e55(0xff)]=_0xf46e55(0x103)),count<0x2710&&(count_container['className']=_0xf46e55(0xe2)),count<0x3e8&&(count_container['className']='three-digits'),count<0x64&&(count_container['className']=_0xf46e55(0x108)),count<0xa&&(count_container[_0xf46e55(0xff)]=_0xf46e55(0xe7)),count<0x1&&(subtract_button[_0xf46e55(0xff)]=_0xf46e55(0xfb));}addEventListener(_0x11f287(0xd2),function(_0x2a5a45){const _0xe1cc59=_0x11f287;if(_0x2a5a45[_0xe1cc59(0xf6)]==0x26||_0x2a5a45[_0xe1cc59(0xf6)]==0x27)add();}),addEventListener(_0x11f287(0xe0),function(_0x5d3c72){const _0x4068fe=_0x11f287;if(_0x5d3c72[_0x4068fe(0xf6)]==0x28||_0x5d3c72[_0x4068fe(0xf6)]==0x25)subtract();});function activateScreen(_0x32e3a1){const _0x431d61=_0x11f287;app['setAttribute']('screen',_0x32e3a1[_0x431d61(0x10a)]);}function close_screen(){const _0x15a7f6=_0x11f287;app[_0x15a7f6(0x100)](_0x15a7f6(0xe4),_0x15a7f6(0xdb));}function switchTheme(_0x1ec93d){const _0x4840ed=_0x11f287;localStorage['setItem'](_0x4840ed(0xcc),_0x1ec93d[_0x4840ed(0x10a)]),app[_0x4840ed(0x100)](_0x4840ed(0xcc),_0x1ec93d[_0x4840ed(0x10a)]);}function _0x4d7d(_0x2c400a,_0x6a475){_0x2c400a=_0x2c400a-0xc5;let _0x1cf74a=_0x1cf7[_0x2c400a];return _0x1cf74a;}function updateTheme(){const _0x30eef8=_0x11f287;var _0x5a7061=localStorage['getItem'](_0x30eef8(0xcc));app[_0x30eef8(0x100)](_0x30eef8(0xcc),_0x5a7061),document['getElementById'](_0x30eef8(0xed)+_0x5a7061)[_0x30eef8(0xd5)]=!![];}updateTheme(),window['addEventListener'](_0x11f287(0xda),function(){updateUI(),updateTheme();},![]);function handleFirstTab(_0x532ca8){const _0xf6315=_0x11f287;_0x532ca8[_0xf6315(0xf6)]===0x9&&(document[_0xf6315(0xd7)][_0xf6315(0xeb)][_0xf6315(0xd6)]('user-is-tabbing'),window[_0xf6315(0xdf)](_0xf6315(0xd2),handleFirstTab),window['addEventListener'](_0xf6315(0xc9),handleMouseDownOnce));}function handleMouseDownOnce(){const _0x2b8ad=_0x11f287;document[_0x2b8ad(0xd7)][_0x2b8ad(0xeb)][_0x2b8ad(0xd1)](_0x2b8ad(0xef)),window[_0x2b8ad(0xdf)](_0x2b8ad(0xc9),handleMouseDownOnce),window[_0x2b8ad(0xdc)](_0x2b8ad(0xd2),handleFirstTab);}window[_0x11f287(0xdc)](_0x11f287(0xd2),handleFirstTab);_0x11f287(0x105)in navigator&&window[_0x11f287(0xdc)](_0x11f287(0x10b),function(){const _0x379285=_0x11f287;navigator[_0x379285(0x105)][_0x379285(0xd0)](_0x379285(0xc7))[_0x379285(0x10e)](function(_0x3c1be6){const _0x16eca7=_0x379285;console[_0x16eca7(0x102)](_0x16eca7(0xea),_0x3c1be6['scope']);},function(_0x3edd5a){const _0x3fa069=_0x379285;console[_0x3fa069(0x102)](_0x3fa069(0xf2),_0x3edd5a);});});
-</script>
-
-</body>
+    <script>
+      const _0x1cf7 = [
+        "innerHTML",
+        "screen",
+        "reset-checkbox-2",
+        "zero-notice",
+        "single-digit",
+        "limit-number",
+        "three-digits",
+        "ServiceWorker\x20registration\x20successful\x20with\x20scope:\x20",
+        "classList",
+        "2wIbssT",
+        "theme-btn-",
+        "loading",
+        "user-is-tabbing",
+        "126047CJAfWQ",
+        "count",
+        "ServiceWorker\x20registration\x20failed:\x20",
+        "setItem",
+        "simplecounter.app",
+        "subtract-button",
+        "keyCode",
+        "getElementsByTagName",
+        "flash",
+        "904254Qpyufi",
+        "slice",
+        "inactive",
+        "330798MEGpIe",
+        "8gUpBRl",
+        "764898rOjSZA",
+        "className",
+        "setAttribute",
+        "off",
+        "log",
+        "five-digits",
+        "getElementById",
+        "serviceWorker",
+        "getItem",
+        "spaces-notice",
+        "two-digits",
+        "true",
+        "value",
+        "load",
+        "app",
+        "done",
+        "then",
+        "spaces-container",
+        "BODY",
+        "service-worker.js",
+        "limit-warning",
+        "mousedown",
+        "58534mQGHds",
+        "limit\x20reached",
+        "theme",
+        "2923790KHUUEg",
+        "175586CLMuKt",
+        "active",
+        "register",
+        "remove",
+        "keydown",
+        "hostname",
+        "count-container",
+        "checked",
+        "add",
+        "body",
+        "set-count",
+        "tux",
+        "storage",
+        "none",
+        "addEventListener",
+        "available",
+        "reset-checkbox",
+        "removeEventListener",
+        "keyup",
+        "spaces-available",
+        "four-digits",
+      ];
+      const _0x11f287 = _0x4d7d;
+      (function (_0x522c60, _0xe6f14c) {
+        const _0x4a5ff0 = _0x4d7d;
+        while (!![]) {
+          try {
+            const _0x449957 =
+              -parseInt(_0x4a5ff0(0xfe)) +
+              parseInt(_0x4a5ff0(0xf0)) * parseInt(_0x4a5ff0(0xec)) +
+              -parseInt(_0x4a5ff0(0xf9)) +
+              -parseInt(_0x4a5ff0(0xfc)) +
+              -parseInt(_0x4a5ff0(0xce)) +
+              -parseInt(_0x4a5ff0(0xca)) * parseInt(_0x4a5ff0(0xfd)) +
+              parseInt(_0x4a5ff0(0xcd));
+            if (_0x449957 === _0xe6f14c) break;
+            else _0x522c60["push"](_0x522c60["shift"]());
+          } catch (_0xbec50f) {
+            _0x522c60["push"](_0x522c60["shift"]());
+          }
+        }
+      })(_0x1cf7, 0x81e6c);
+      let app = document[_0x11f287(0xf7)](_0x11f287(0xc6))[0x0],
+        theme,
+        count,
+        count_container = document[_0x11f287(0x104)](_0x11f287(0xd4)),
+        set_count = document[_0x11f287(0x104)](_0x11f287(0xd8)),
+        subtract_button = document[_0x11f287(0x104)](_0x11f287(0xf5)),
+        add_button = document["getElementById"]("add-button"),
+        limit_warning,
+        limit_number,
+        set_limit = document[_0x11f287(0x104)]("set-limit"),
+        spaces_container = document[_0x11f287(0x104)](_0x11f287(0xc5)),
+        spaces_available = document[_0x11f287(0x104)](_0x11f287(0xe1)),
+        spaces_notice = document["getElementById"](_0x11f287(0x107)),
+        spaces,
+        reset_checkbox = document[_0x11f287(0x104)](_0x11f287(0xde)),
+        reset_checkbox_2 = document[_0x11f287(0x104)](_0x11f287(0xe5)),
+        reset_notice = document["getElementById"]("reset-notice"),
+        zero_notice = document["getElementById"](_0x11f287(0xe6));
+      function init() {
+        const _0x2aa5df = _0x11f287;
+        localStorage["getItem"]("count") == null
+          ? ((count = 0x0), localStorage[_0x2aa5df(0xf3)]("count", 0x0))
+          : (count = parseInt(localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xf1))));
+        localStorage["getItem"](_0x2aa5df(0xcc)) == null
+          ? ((theme = "tux"),
+            localStorage[_0x2aa5df(0xf3)](_0x2aa5df(0xcc), _0x2aa5df(0xd9)))
+          : ((theme = localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xcc))),
+            app[_0x2aa5df(0x100)](_0x2aa5df(0xcc), theme));
+        if (localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xc8)) == null)
+          (limit_warning = _0x2aa5df(0x101)),
+            localStorage["setItem"](_0x2aa5df(0xc8), "off"),
+            app["setAttribute"](_0x2aa5df(0xc8), _0x2aa5df(0x101));
+        else
+          localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xc8)) == "on"
+            ? ((limit_warning = "on"),
+              localStorage[_0x2aa5df(0xf3)](_0x2aa5df(0xc8), "on"),
+              app["setAttribute"](_0x2aa5df(0xc8), "on"))
+            : ((limit_warning = "off"),
+              localStorage[_0x2aa5df(0xf3)](_0x2aa5df(0xc8), _0x2aa5df(0x101)),
+              app[_0x2aa5df(0x100)](_0x2aa5df(0xc8), _0x2aa5df(0x101)));
+        localStorage[_0x2aa5df(0x106)](_0x2aa5df(0xe8)) == null
+          ? ((limit_number = "20"),
+            localStorage[_0x2aa5df(0xf3)](_0x2aa5df(0xe8), "20"))
+          : (limit_number = parseInt(localStorage["getItem"](_0x2aa5df(0xe8)))),
+          app[_0x2aa5df(0x100)](_0x2aa5df(0xe4), _0x2aa5df(0x10c)),
+          loadUIAnimation(),
+          updateUI();
+      }
+      init();
+      function loadUIAnimation() {
+        const _0x33acd2 = _0x11f287;
+        spaces_container[_0x33acd2(0x100)](_0x33acd2(0xee), _0x33acd2(0x109)),
+          add_button[_0x33acd2(0x100)](_0x33acd2(0xee), _0x33acd2(0x109)),
+          subtract_button["setAttribute"](_0x33acd2(0xee), _0x33acd2(0x109)),
+          setTimeout(function () {
+            const _0x31f85d = _0x33acd2;
+            spaces_container[_0x31f85d(0x100)](
+              _0x31f85d(0xee),
+              _0x31f85d(0x10d)
+            ),
+              add_button[_0x31f85d(0x100)](_0x31f85d(0xee), _0x31f85d(0x10d)),
+              subtract_button[_0x31f85d(0x100)](
+                _0x31f85d(0xee),
+                _0x31f85d(0x10d)
+              );
+          }, 0x1964);
+      }
+      function add() {
+        (count = count + 0x1), updateCount();
+      }
+      function subtract() {
+        const _0xd40c8e = _0x11f287;
+        location[_0xd40c8e(0xd3)] == _0xd40c8e(0xf4) &&
+          ((count = count - 0x1), updateCount());
+      }
+      function reset() {
+        (count = 0x0), updateCount();
+      }
+      function updateCount() {
+        const _0x2001ca = _0x11f287;
+        localStorage[_0x2001ca(0xf3)]("count", count), updateUI();
+      }
+      function updateCountFromNumber() {
+        const _0x4de96b = _0x11f287;
+        set_count[_0x4de96b(0x10a)]["length"] > 0x4 &&
+          (set_count["value"] = set_count[_0x4de96b(0x10a)][_0x4de96b(0xfa)](
+            0x0,
+            0x4
+          )),
+          (count = parseInt(set_count[_0x4de96b(0x10a)])),
+          updateCount();
+      }
+      function updateLimit() {
+        const _0x48642e = _0x11f287;
+        localStorage[_0x48642e(0xf3)](
+          _0x48642e(0xe8),
+          set_limit[_0x48642e(0x10a)]
+        ),
+          updateUI();
+      }
+      function toggle_limit_warning() {
+        const _0x3f62e3 = _0x11f287;
+        localStorage[_0x3f62e3(0x106)](_0x3f62e3(0xc8)) == _0x3f62e3(0x101)
+          ? ((limit_warning = "on"),
+            localStorage[_0x3f62e3(0xf3)](_0x3f62e3(0xc8), "on"),
+            app["setAttribute"](_0x3f62e3(0xc8), "on"))
+          : ((limit_warning = _0x3f62e3(0x101)),
+            localStorage[_0x3f62e3(0xf3)]("limit-warning", _0x3f62e3(0x101)),
+            app[_0x3f62e3(0x100)](_0x3f62e3(0xc8), _0x3f62e3(0x101))),
+          updateUI();
+      }
+      function resetNotice() {
+        const _0x5d77a1 = _0x11f287;
+        reset_warning == _0x5d77a1(0x101)
+          ? reset()
+          : (reset_notice[_0x5d77a1(0xff)] = _0x5d77a1(0xcf));
+      }
+      function updateTheme(_0x4264ab) {
+        const _0x494e20 = _0x11f287;
+        localStorage["setItem"](_0x494e20(0xcc), _0x4264ab["value"]),
+          updateUI();
+      }
+      function activateScreen(_0x27e830) {
+        const _0x46ab4d = _0x11f287;
+        app[_0x46ab4d(0x100)](_0x46ab4d(0xe4), _0x27e830[_0x46ab4d(0x10a)]);
+      }
+      function closeScreen() {
+        const _0x4bf170 = _0x11f287;
+        app[_0x4bf170(0x100)]("screen", _0x4bf170(0x10c));
+      }
+      function updateUI() {
+        const _0xf46e55 = _0x11f287;
+        (count = parseInt(localStorage[_0xf46e55(0x106)](_0xf46e55(0xf1)))),
+          (count_container[_0xf46e55(0xe3)] = count),
+          (set_count[_0xf46e55(0x10a)] = count),
+          (set_limit[_0xf46e55(0x10a)] = parseInt(
+            localStorage[_0xf46e55(0x106)](_0xf46e55(0xe8))
+          )),
+          (limit_number = parseInt(
+            localStorage[_0xf46e55(0x106)](_0xf46e55(0xe8))
+          )),
+          (theme = localStorage[_0xf46e55(0x106)](_0xf46e55(0xcc))),
+          app[_0xf46e55(0x100)](_0xf46e55(0xcc), theme),
+          (document[_0xf46e55(0x104)](_0xf46e55(0xed) + theme)["checked"] =
+            !![]),
+          localStorage[_0xf46e55(0x106)]("limit-warning") == "on"
+            ? app["setAttribute"](_0xf46e55(0xc8), "on")
+            : app[_0xf46e55(0x100)](_0xf46e55(0xc8), "off"),
+          (spaces = limit_number - count),
+          (spaces_available[_0xf46e55(0xe3)] = spaces),
+          spaces < 0x1
+            ? ((spaces_notice["innerHTML"] = _0xf46e55(0xcb)),
+              spaces_notice["classList"]["add"](_0xf46e55(0xf8)))
+            : ((spaces_notice[_0xf46e55(0xe3)] = _0xf46e55(0xdd)),
+              spaces_notice[_0xf46e55(0xeb)][_0xf46e55(0xd1)]("flash")),
+          count > 0x0 && (subtract_button[_0xf46e55(0xff)] = _0xf46e55(0xcf)),
+          count > 0x9 && (count_container[_0xf46e55(0xff)] = _0xf46e55(0x108)),
+          count > 0x63 && (count_container[_0xf46e55(0xff)] = _0xf46e55(0xe9)),
+          count > 0x3e7 && (count_container[_0xf46e55(0xff)] = _0xf46e55(0xe2)),
+          count > 0x270f &&
+            (count_container[_0xf46e55(0xff)] = _0xf46e55(0x103)),
+          count < 0x2710 && (count_container["className"] = _0xf46e55(0xe2)),
+          count < 0x3e8 && (count_container["className"] = "three-digits"),
+          count < 0x64 && (count_container["className"] = _0xf46e55(0x108)),
+          count < 0xa && (count_container[_0xf46e55(0xff)] = _0xf46e55(0xe7)),
+          count < 0x1 && (subtract_button[_0xf46e55(0xff)] = _0xf46e55(0xfb));
+      }
+      addEventListener(_0x11f287(0xd2), function (_0x2a5a45) {
+        const _0xe1cc59 = _0x11f287;
+        if (
+          _0x2a5a45[_0xe1cc59(0xf6)] == 0x26 ||
+          _0x2a5a45[_0xe1cc59(0xf6)] == 0x27
+        )
+          add();
+      }),
+        addEventListener(_0x11f287(0xe0), function (_0x5d3c72) {
+          const _0x4068fe = _0x11f287;
+          if (
+            _0x5d3c72[_0x4068fe(0xf6)] == 0x28 ||
+            _0x5d3c72[_0x4068fe(0xf6)] == 0x25
+          )
+            subtract();
+        });
+      function activateScreen(_0x32e3a1) {
+        const _0x431d61 = _0x11f287;
+        app["setAttribute"]("screen", _0x32e3a1[_0x431d61(0x10a)]);
+      }
+      function close_screen() {
+        const _0x15a7f6 = _0x11f287;
+        app[_0x15a7f6(0x100)](_0x15a7f6(0xe4), _0x15a7f6(0xdb));
+      }
+      function switchTheme(_0x1ec93d) {
+        const _0x4840ed = _0x11f287;
+        localStorage["setItem"](_0x4840ed(0xcc), _0x1ec93d[_0x4840ed(0x10a)]),
+          app[_0x4840ed(0x100)](_0x4840ed(0xcc), _0x1ec93d[_0x4840ed(0x10a)]);
+      }
+      function _0x4d7d(_0x2c400a, _0x6a475) {
+        _0x2c400a = _0x2c400a - 0xc5;
+        let _0x1cf74a = _0x1cf7[_0x2c400a];
+        return _0x1cf74a;
+      }
+      function updateTheme() {
+        const _0x30eef8 = _0x11f287;
+        var _0x5a7061 = localStorage["getItem"](_0x30eef8(0xcc));
+        app[_0x30eef8(0x100)](_0x30eef8(0xcc), _0x5a7061),
+          (document["getElementById"](_0x30eef8(0xed) + _0x5a7061)[
+            _0x30eef8(0xd5)
+          ] = !![]);
+      }
+      updateTheme(),
+        window["addEventListener"](
+          _0x11f287(0xda),
+          function () {
+            updateUI(), updateTheme();
+          },
+          ![]
+        );
+      function handleFirstTab(_0x532ca8) {
+        const _0xf6315 = _0x11f287;
+        _0x532ca8[_0xf6315(0xf6)] === 0x9 &&
+          (document[_0xf6315(0xd7)][_0xf6315(0xeb)][_0xf6315(0xd6)](
+            "user-is-tabbing"
+          ),
+          window[_0xf6315(0xdf)](_0xf6315(0xd2), handleFirstTab),
+          window["addEventListener"](_0xf6315(0xc9), handleMouseDownOnce));
+      }
+      function handleMouseDownOnce() {
+        const _0x2b8ad = _0x11f287;
+        document[_0x2b8ad(0xd7)][_0x2b8ad(0xeb)][_0x2b8ad(0xd1)](
+          _0x2b8ad(0xef)
+        ),
+          window[_0x2b8ad(0xdf)](_0x2b8ad(0xc9), handleMouseDownOnce),
+          window[_0x2b8ad(0xdc)](_0x2b8ad(0xd2), handleFirstTab);
+      }
+      window[_0x11f287(0xdc)](_0x11f287(0xd2), handleFirstTab);
+      _0x11f287(0x105) in navigator &&
+        window[_0x11f287(0xdc)](_0x11f287(0x10b), function () {
+          const _0x379285 = _0x11f287;
+          navigator[_0x379285(0x105)]
+            [_0x379285(0xd0)](_0x379285(0xc7))
+            [_0x379285(0x10e)](
+              function (_0x3c1be6) {
+                const _0x16eca7 = _0x379285;
+                console[_0x16eca7(0x102)](_0x16eca7(0xea), _0x3c1be6["scope"]);
+              },
+              function (_0x3edd5a) {
+                const _0x3fa069 = _0x379285;
+                console[_0x3fa069(0x102)](_0x3fa069(0xf2), _0x3edd5a);
+              }
+            );
+        });
+    </script>
+  </body>
 </html>
